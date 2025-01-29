@@ -1,0 +1,13 @@
+Grid:
+In grid there are block filled with zeros, particular colored block is display by changing the particular blocks number like for red block -> 1, blue -> 2, etc (check out image)
+range for color -> 1 to 7
+
+Features implementation:
+seperate .h files are created and then they are imported in main.cpp
+ABSTRACTION is achieved as implementation is hidden from other feature codes
+
+Colors: 
+total 8 colors :
+1 for empty cell and rest all are to represent the cell
+
+DrawRectangle function can be able to used to draw the cells inside the grid
