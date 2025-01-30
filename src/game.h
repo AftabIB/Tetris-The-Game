@@ -32,6 +32,9 @@ class Game
         //rotate the block 
         void RotateBlock();
 
+        // block the block at the end of grid
+        void LockBlock();
+
         // random block
         vector<Block> blocks;
         
@@ -39,5 +42,7 @@ class Game
         Block currentBlock;
         Block nextBlock;
 
+        // check every cell of block, if it is on the top of the empty cell or not
+        bool BlockFits();
 
 };

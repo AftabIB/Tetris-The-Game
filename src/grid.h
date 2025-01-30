@@ -7,7 +7,7 @@
 using namespace std;
 
 class Grid {
-    public:
+public:
     // constructor
     Grid();
 
@@ -25,8 +25,13 @@ class Grid {
     // Need to know the rows and cols in grid
     int grid[20][10];
 
-    private: 
+    // check whether the cell is empty or not
+    bool isCellEmpty(int row, int column);
 
+private: 
+
+    bool IsRowFull(int row);
+    void ClearRow(int row);
     int numRows;
     int numCols;
     int cellSize;     // size of cell inside the grid 

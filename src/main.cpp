@@ -1,5 +1,24 @@
 #include <raylib.h>
 #include "game.h"
+
+double lastUpdateTime = 0;
+
+// check that some interval has passed like for 2 or 3 seconds then mve the block downwards automatically 
+bool EventTriggered(double interval)    // time in seconds
+{
+    // get the current time in seconds (build in function in raylib)
+    double currentTime = GetTime();
+    
+    // difference 
+    if(currentTime - lastUpdateTime >= interval)
+    {
+        lastUpdateTime = currentTime;
+        return true;
+    }
+
+    return false;
+}
+
 int main() 
 {
     // STEP 1 : Game Loop
@@ -32,16 +51,18 @@ int main()
         // Handle the movement of the blocks (left, right down)
         game.HandleInput();
 
+        // STEP 6: Moving the blocks downwards after interval pass the difference between the current time and last updated time which is currently 0
+        if(EventTriggered(0.4))
+        {
+            game.MoveBlockDown();
+        }
+
         // to begin drwaing canvas
         BeginDrawing();
 
         // background
         ClearBackground(darkBlue);
 
-        // grid with cells
-        // grid.Draw();
-
-        // block.Draw();
         game.Draw();
 
         // to end drwaing canvas
