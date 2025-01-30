@@ -6,6 +6,7 @@ Game::Game()
     blocks = GetAllBlocks();  // vector of blocks: for random selection of blocks
     currentBlock = GetRandomBlock();
     nextBlock = GetRandomBlock();
+    gameOver = false; 
 
 }
 
@@ -42,6 +43,13 @@ void Game::HandleInput()
 {
     // detect the key pressed using GetKeyPressed function
     int keyPressed = GetKeyPressed();
+    
+    if(gameOver && keyPressed != 0)
+    {
+        gameOver = false;
+        Reset();
+    }
+
     switch(keyPressed)
     {
         case KEY_LEFT:  // checks whether the key pressed = KEY_LEFT constant (Left arrow)
@@ -64,31 +72,40 @@ void Game::HandleInput()
 
 void Game::MoveBlockLeft()
 {
-    currentBlock.Move(0, -1);
-    if (IsBlockOutside() || BlockFits() == false)
+    if(!gameOver)
     {
-        currentBlock.Move(0, 1);
+        currentBlock.Move(0, -1);
+        if (IsBlockOutside() || BlockFits() == false)
+        {
+            currentBlock.Move(0, 1);
+        }
     }
 }
 
 void Game::MoveBlockRight()
 {
-    currentBlock.Move(0, 1);
-    if (IsBlockOutside() || BlockFits() == false)
+    if(!gameOver)
     {
-        currentBlock.Move(0, -1);
+        currentBlock.Move(0, 1);
+        if (IsBlockOutside() || BlockFits() == false)
+        {
+            currentBlock.Move(0, -1);
+        }
     }
 }
 
 void Game::MoveBlockDown()
 {
-    currentBlock.Move(1, 0);
-    if (IsBlockOutside() || BlockFits() == false)       // also check whether the cells are empty or is there any already block occupied 
+    if(!gameOver)
     {
-        currentBlock.Move(-1, 0);
+        currentBlock.Move(1, 0);
+        if (IsBlockOutside() || BlockFits() == false) // also check whether the cells are empty or is there any already block occupied
+        {
+            currentBlock.Move(-1, 0);
 
-        // lock the blocks at the current state when they reach at the end of grid, so that they cannot be moved left or right 
-        LockBlock();
+            // lock the blocks at the current state when they reach at the end of grid, so that they cannot be moved left or right
+            LockBlock();
+        }
     }
 }
 
@@ -110,10 +127,13 @@ bool Game::IsBlockOutside()
 
 void Game::RotateBlock()
 {
-    currentBlock.Rotate();
-    if (IsBlockOutside() || BlockFits() == false)
+    if(!gameOver)
     {
-        currentBlock.UndoRotation();
+        currentBlock.Rotate();
+        if (IsBlockOutside() || BlockFits() == false)
+        {
+            currentBlock.UndoRotation();
+        }
     }
 }
 
@@ -128,7 +148,14 @@ void Game::LockBlock()
         grid.grid[item.row][item.column] = currentBlock.id;
     }
     currentBlock = nextBlock;
+
+    if(BlockFits() == false)
+    {
+        gameOver = true; 
+    }
+
     nextBlock = GetRandomBlock();
+    grid.ClearFullRows();
 }
 
 bool Game::BlockFits()
@@ -142,4 +169,16 @@ bool Game::BlockFits()
         }
     }
     return true;
+}
+
+// resets the grid after game overs
+void Game::Reset()
+{
+    // sets the grid cells to zero
+    grid.Intitialize();
+
+    // selecting the new random block and next block
+    blocks = GetAllBlocks();
+    currentBlock = GetRandomBlock();
+    nextBlock = GetRandomBlock();
 }

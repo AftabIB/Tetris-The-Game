@@ -22,6 +22,7 @@ class Game
 
         // class should create and hold the grid
         Grid grid;
+        bool gameOver;
 
 
     private:
@@ -44,5 +45,7 @@ class Game
 
         // check every cell of block, if it is on the top of the empty cell or not
         bool BlockFits();
+
+        void Reset();
 
 };

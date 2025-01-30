@@ -80,6 +80,25 @@ bool Grid::isCellEmpty(int row, int column)
     return false;
 }
 
+// check whether the row is full, if yes then remove it from down of  grid
+int Grid::ClearFullRows()
+{
+    int completed = 0;
+    for(int row = numRows-1; row>=0; row--)
+    {
+        if(IsRowFull(row))
+        {
+            ClearRow(row);
+            completed++;
+        }
+        else if(completed > 0)
+        {
+            MoveRowDown(row, completed);
+        }
+    }
+    return completed;
+}
+
 bool Grid::IsRowFull(int row)
 {
     // check whether the cell in row is empty or not
@@ -97,5 +116,18 @@ bool Grid::IsRowFull(int row)
 // clear the row if it doesn't contain the any empty cell 
 void Grid::ClearRow(int row)
 {
-    
+    for(int column = 0; column < numCols; column++)
+    {
+        grid[row][column] = 0;
+    }
+}
+
+// move that number of all the rows which are all filled in total, like 2 are filled and 3 are yet to be then, that 3 rows should be moved 2 down
+void Grid::MoveRowDown(int row, int numRows)
+{
+    for(int column = 0; column < numCols; column++)
+    {
+        grid[row + numRows][column] = grid[row][column];
+        grid[row][column] = 0;
+    }
 }

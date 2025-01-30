@@ -28,10 +28,14 @@ public:
     // check whether the cell is empty or not
     bool isCellEmpty(int row, int column);
 
+    // clear the original row which is fully filled
+    int ClearFullRows();
+
 private: 
 
     bool IsRowFull(int row);
     void ClearRow(int row);
+    void MoveRowDown(int row, int numRows);
     int numRows;
     int numCols;
     int cellSize;     // size of cell inside the grid 
