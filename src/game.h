@@ -12,14 +12,32 @@ class Game
         Game();
         Block GetRandomBlock();
         vector<Block> GetAllBlocks();
-        // class should create and hold the grid
+        void Draw();
 
+        // control the movement of the block using the keyboard
+        void HandleInput();
+        void MoveBlockLeft();
+        void MoveBlockRight();
+        void MoveBlockDown();
+
+        // class should create and hold the grid
         Grid grid;
 
-        // attribute to hold the current block which is visible on screen
 
     private:
+
+        // check whether the block is outside of game window using isCellOutside method
+        bool IsBlockOutside();
+
+        //rotate the block 
+        void RotateBlock();
+
         // random block
         vector<Block> blocks;
+        
+        // attribute to hold the current and next block which is visible on screen
+        Block currentBlock;
+        Block nextBlock;
+
 
 };

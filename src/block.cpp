@@ -58,3 +58,25 @@ vector<Position> Block::GetCellPositions()
 
     return moveTiles;
 }
+
+
+// Step 5: rotate the blocks 
+void Block::Rotate()
+{
+    rotationState++;
+    // check if the rotational state is equal to rotational state the block has, typically 4 states 
+    if(rotationState == (int)cells.size())
+    {
+        rotationState = 0;
+    }
+}
+
+void Block::UndoRotation()
+{
+    rotationState--;
+    // if it is negative, reset it to max value it can get 
+    if(rotationState == -1)
+    {
+        rotationState = cells.size() - 1;
+    }
+}

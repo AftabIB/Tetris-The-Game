@@ -16,13 +16,20 @@ class Block
         int id;
         map<int, vector<Position>> cells;
 
-        // Move the blocks to particular cell using the offset position -> row_offset and column_offset 
+        // Step 5: rotate the colored blocks 
+        void Rotate();
+
+        // while rotating the blocks, some blocks go out of grid, prevent this from Undoing the rotation 
+        void UndoRotation();
+
 
 
     private:
         int cellSize;
         int rotationState;
         vector<Color> colors;
+        
+        // Move the blocks to particular cell using the offset position -> row_offset and column_offset 
         int rowOffset;
         int colOffset;
 };

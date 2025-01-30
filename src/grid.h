@@ -19,6 +19,9 @@ class Grid {
 
     void Draw();
 
+    // checking whether the block is outside the grid 
+    bool IsCellOutside(int row, int column);
+
     // Need to know the rows and cols in grid
     int grid[20][10];
 

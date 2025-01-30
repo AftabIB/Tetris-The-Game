@@ -60,3 +60,13 @@ void Grid::Draw()
         }
     }
 }
+
+// check whether the colored blocks are outside the grid or not
+bool Grid::IsCellOutside(int row, int column)
+{
+    if( row >= 0&& row < numRows && column >=0 && column < numCols)
+    {
+        return false;
+    }
+    return true;
+}

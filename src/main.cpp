@@ -1,7 +1,5 @@
 #include <raylib.h>
-#include "grid.h"
-#include "blocks.cpp"
-
+#include "game.h"
 int main() 
 {
     // STEP 1 : Game Loop
@@ -17,19 +15,23 @@ int main()
     
 
     // STEP 2: Creating the Grid 
-    Grid grid = Grid();
-    grid.print();
-
+    // Grid grid = Grid();
+    // grid.print();
+ 
     // STEP 3: Creating the blocks
-    IBlock block = IBlock();
+    // IBlock block = IBlock();
     // block.Move(4, 3);
 
+    Game game = Game();
 
     // STEP 4: Move the blocks
 
     // inside while loop check for any events
     while(WindowShouldClose() == false)     // checks esc key is pressed or close icon is pressed and returns true if it is clicked exit
     {
+        // Handle the movement of the blocks (left, right down)
+        game.HandleInput();
+
         // to begin drwaing canvas
         BeginDrawing();
 
@@ -37,9 +39,10 @@ int main()
         ClearBackground(darkBlue);
 
         // grid with cells
-        grid.Draw();
+        // grid.Draw();
 
-        block.Draw();
+        // block.Draw();
+        game.Draw();
 
         // to end drwaing canvas
         EndDrawing();

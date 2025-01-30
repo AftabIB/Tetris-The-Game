@@ -7,3 +7,4 @@ map: to craete the blocks [use cells attribute of block class -> map of vector :
 OOPS:
 Abstraction: Achieved as implementation is hidden from other feature codes
 Inheritance: Block as base class -> empty block and 7 other blocks with different colors as child blocks, to create the different shapes(check image OOPS-Inheritance) 
+Encapsulation: arrow key direction by pressing the arrow key, seperate method/function is created for handling the movement of the block
