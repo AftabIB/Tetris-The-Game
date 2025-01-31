@@ -53,7 +53,7 @@ void Grid::Draw()
         {
             int cellValue = grid[row][column];
             // draw the cells (in square)
-            DrawRectangle(column * cellSize+1, row * cellSize+1, cellSize-1, cellSize-1, colors[cellValue]); // -> cell values are currently zero hence 0th index color will be returned       
+            DrawRectangle(column * cellSize + 25, row * cellSize + 25, cellSize - 1, cellSize - 1, colors[cellValue]); // -> cell values are currently zero hence 0th index color will be returned       
             // plus and minus because to show the margin of 1px
 
 

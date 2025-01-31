@@ -13,7 +13,7 @@ Block::Block()
 }
 
 // Draw method to draw the methods on screen
-void Block::Draw()
+void Block::Draw(int offsetX, int offsetY)
 {
 
     // retrives the vector of positions for current rotation state based on current rotationState attribute value
@@ -24,7 +24,7 @@ void Block::Draw()
     for(Position item : tiles)
     {
         // create the rectangle for each cell
-        DrawRectangle(item.column * cellSize + 1, item.row * cellSize + 1, cellSize - 1, cellSize - 1, colors[id]);
+        DrawRectangle(item.column * cellSize + offsetX, item.row * cellSize + offsetY, cellSize - 1, cellSize - 1, colors[id]);
     }
 
 }
