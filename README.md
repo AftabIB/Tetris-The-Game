@@ -1,29 +1,56 @@
-# Raylib-CPP-Starter-Template-for-VSCODE-V2
-Raylib C++ Starter Template for Visual Studio Code on Windows.
-This demo project contains a bouncing ball raylib example program.
-It works with raylib version 5.0. Tested on both Windows 10 and Windows 11.
+# Tetris - The Game
 
-# How to use this template
-1. Double click on the main.code-workspace file. This will open the template in VS Code.
-2. From the Explorer Window of VS Code navigate to the src folder and double click on the main.cpp file.
-3. Press F5 on the keyboard to compile and run the program.
+## Prerequisites
 
-# What's changed
-The template now uses folders for better organizion of the files. So, all the source code now lives in the src folder.
+Before running the game, ensure the following requirements are met:
 
-# Video Tutorial
+1. **MinGW Installation**
+   - Install MinGW (g++ 7.0 or newer version) and set up the environment variables.
+   - Verify that `g++` is installed by running:
+     ```sh
+     g++ --version
+     ```
+   - [Watch this YouTube tutorial to set up MinGW](https://youtu.be/-KayVZq1a58?si=NKJwpjIGgTZvhU07)
 
-<p align="center">
-  <img src="preview.jpg" alt="" width="800">
-</p>
+3. **Raylib Installation**
+   - Download and install Raylib. The setup file is provided on Google Drive.
+   - [Google Drive link](https://drive.google.com/drive/folders/11l_80P5bKV4J8jj5k3wIHviuVNj2fsgC?usp=sharing)
 
-<p align="center">
-🎥 <a href="https://www.youtube.com/watch?v=PaAcVk5jUd8">Video Tutorial on YouTube</a>
-</p>
+## Running the Game
 
-<br>
-<br>
-<p align="center">
-| 📺 <a href="https://www.youtube.com/channel/UC3ivOTE5EgpmF2DHLBmWIWg">My YouTube Channel</a>
-| 🌍 <a href="http://www.educ8s.tv">My Website</a> | <br>
-</p>
+Follow these steps to build and run the game:
+
+1. **Open the project in VS Code**
+2. **Check if the g++ compiler is installed**
+   ```sh
+   g++ --version
+   ```
+3. **Navigate to the build folder**
+   ```sh
+   cd build
+   ```
+4. **Compile and run the game**
+   ```sh
+   mingw32-make
+   ```
+5. **Enjoy the game!**
+
+---
+
+## Game Instructions & Rules
+
+1. Earn **1 point** each time a block successfully moves down to the bottom.
+2. Earn **100 points** for completing a single row.
+3. Earn **300 points** for clearing two rows simultaneously.
+4. Earn **500 points** for clearing three rows simultaneously.
+5. **Controls:**
+   - Use the **Left Arrow Key** to move the block left.
+   - Use the **Right Arrow Key** to move the block right.
+   - Use the **Down Arrow Key** to speed up the block’s descent.
+   - Use the **Up Arrow Key** to rotate the block.
+6. The game ends when blocks reach the top of the screen.
+7. **Restarting the game:**
+   - Press **any key** after a game over to restart.
+---
+
+Enjoy the game and aim for the highest score! 🚀
