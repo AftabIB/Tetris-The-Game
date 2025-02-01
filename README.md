@@ -1,4 +1,4 @@
-# Tetris - The game
+# Tetris - The Game
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ Before running the game, ensure the following requirements are met:
      ```sh
      g++ --version
      ```
-   - [Watch this YouTube tutorial to set up MinGW]([https://www.youtube.com/watch?v=1-dUkyn_fZA](https://youtu.be/-KayVZq1a58?si=NKJwpjIGgTZvhU07))
+   - [Watch this YouTube tutorial to set up MinGW](https://youtu.be/-KayVZq1a58?si=NKJwpjIGgTZvhU07)
 
 2. **Raylib Installation**
    - Download and install Raylib. The setup file is provided on Google Drive.
