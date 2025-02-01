@@ -5,14 +5,14 @@
 Before running the game, ensure the following requirements are met:
 
 1. **MinGW Installation**
-   - Install MinGW and set up the environment variables.
+   - Install MinGW (g++ 7.0 or newer version) and set up the environment variables.
    - Verify that `g++` is installed by running:
      ```sh
      g++ --version
      ```
    - [Watch this YouTube tutorial to set up MinGW](https://youtu.be/-KayVZq1a58?si=NKJwpjIGgTZvhU07)
 
-2. **Raylib Installation**
+3. **Raylib Installation**
    - Download and install Raylib. The setup file is provided on Google Drive.
    - [Google Drive link](https://drive.google.com/drive/folders/11l_80P5bKV4J8jj5k3wIHviuVNj2fsgC?usp=sharing)
 
