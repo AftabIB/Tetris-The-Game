@@ -10,7 +10,7 @@ Before running the game, ensure the following requirements are met:
      ```sh
      g++ --version
      ```
-   - [Watch this YouTube tutorial to set up MinGW](https://youtu.be/-KayVZq1a58?si=NKJwpjIGgTZvhU07)
+   - [Article to Install C++ 17 or above](https://www.geeksforgeeks.org/complete-guide-to-install-c17-in-windows/)
 
 ## Running the Game
 
