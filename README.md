@@ -12,10 +12,6 @@ Before running the game, ensure the following requirements are met:
      ```
    - [Watch this YouTube tutorial to set up MinGW](https://youtu.be/-KayVZq1a58?si=NKJwpjIGgTZvhU07)
 
-3. **Raylib Installation**
-   - Download and install Raylib. The setup file is provided on Google Drive.
-   - [Google Drive link](https://drive.google.com/drive/folders/11l_80P5bKV4J8jj5k3wIHviuVNj2fsgC?usp=sharing)
-
 ## Running the Game
 
 Follow these steps to build and run the game:
